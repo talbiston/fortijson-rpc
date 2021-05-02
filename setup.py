@@ -11,11 +11,7 @@ setup(
   url = 'https://github.com/talbiston/fortijson-rpc',   
   download_url = 'https://github.com/talbiston/fortijson-rpc/archive/refs/tags/0.0.2.tar.gz',    # I explain this later on
   keywords = ['Fortigate', 'Fortinet', 'Fortinet api'],   
-  install_requires=[            
-          'json', 
-          'collections', 
-          'requests', 
-      ],
+
   classifiers=[
     'Development Status :: 3 - Alpha',      
     'Intended Audience :: Developers',      
