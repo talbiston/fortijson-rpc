@@ -1,27 +1,30 @@
 from distutils.core import setup
 setup(
-  name = 'YOURPACKAGENAME',         # How you named your package folder (MyLib)
-  packages = ['YOURPACKAGENAME'],   # Chose the same as "name"
-  version = '0.1',      # Start with a small number and increase it with every change you make
-  license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
-  description = 'TYPE YOUR DESCRIPTION HERE',   # Give a short description about your library
-  author = 'YOUR NAME',                   # Type in your name
-  author_email = 'your.email@domain.com',      # Type in your E-Mail
-  url = 'https://github.com/user/reponame',   # Provide either the link to your github or to your website
+  name = 'FortiJson',         
+  packages = ['FortiJson'],   
+  version = '0.1',      
+  license='MIT',        
+  description = 'Json formating tool that conforms to Fortinets Json RPC protocol',
+  author = 'Todd Albiston',                   
+  author_email = 'foxtrot711@gmail.com',      
+  url = 'https://github.com/talbiston/fortijson-rpc',   
   download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',    # I explain this later on
-  keywords = ['SOME', 'MEANINGFULL', 'KEYWORDS'],   # Keywords that define your package best
-  install_requires=[            # I get to this in a second
-          'validators',
-          'beautifulsoup4',
+  keywords = ['Fortigate', 'Fortinet', 'Fortinet api'],   
+  install_requires=[            
+          'json', 
+          'collections', 
+          'requests', 
       ],
   classifiers=[
-    'Development Status :: 3 - Alpha',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
-    'Intended Audience :: Developers',      # Define that your audience are developers
+    'Development Status :: 3 - Alpha',      
+    'Intended Audience :: Developers',      
     'Topic :: Software Development :: Build Tools',
-    'License :: OSI Approved :: MIT License',   # Again, pick a license
-    'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
+    'License :: OSI Approved :: MIT License',  
+    'Programming Language :: Python :: 3',  
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
   ],
 )
