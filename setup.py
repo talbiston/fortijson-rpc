@@ -8,7 +8,7 @@ setup(
   author = 'Todd Albiston',                   
   author_email = 'foxtrot711@gmail.com',      
   url = 'https://github.com/talbiston/fortijson-rpc',   
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/talbiston/fortijson-rpc/archive/refs/tags/0.0.2.tar.gz',    # I explain this later on
   keywords = ['Fortigate', 'Fortinet', 'Fortinet api'],   
   install_requires=[            
           'json', 
