@@ -81,7 +81,7 @@ class HTTPclient:
 
     def send(self, json):
 
-        response = requests.post(self.baseUrl, json=json, verify=False)
+        response = requests.post(self.baseUrl, json=json, timeout=5, verify=False)
         return response
 
 
