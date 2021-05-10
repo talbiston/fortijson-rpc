@@ -75,13 +75,14 @@ class JsonRpc(dict):  # type: ignore
 
 class HTTPclient:
 
-    def __init__(self, baseUrl):
+    def __init__(self, baseUrl, timeOut=20):
         self.baseUrl = baseUrl
+        self.timeout = timeOut
 
 
     def send(self, json):
 
-        response = requests.post(self.baseUrl, json=json, timeout=5, verify=False)
+        response = requests.post(self.baseUrl, json=json, timeout=self.timeout, verify=False)
         return response
 
 
