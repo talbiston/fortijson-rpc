@@ -44,7 +44,7 @@ class JsonRpc(dict):  # type: ignore
         # Add the params to self.
 
         kwargs = fix_keys(kwargs)
-
+        session = kwargs.pop('session', None)
         base_list = []
         if args and kwargs:
             # The 'params' can be *EITHER* "by-position" (a list) or "by-name" (a dict).
@@ -59,11 +59,14 @@ class JsonRpc(dict):  # type: ignore
             params_list = list(args)
             params_list.append(kwargs)
             self.update(params=params_list)
+            self.update(session=session)
         elif args:
             self.update(params=list(args))
+            self.update(session=session)
         elif kwargs:
             base_list.append(kwargs)
             self.update(params=base_list)
+            self.update(session=session)
 
     def __json__(self):
 
@@ -80,3 +83,9 @@ class HTTPclient:
 
         response = requests.post(self.baseUrl, json=json, verify=False)
         return response
+
+
+
+if __name__ == '__main__':
+    jrpc = JsonRpc('get', url='https://adc.com', session="123456789qwewerwert")
+    print(jrpc)
