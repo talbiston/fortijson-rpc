@@ -33,7 +33,10 @@ def fix_keys(kwargs):
         #change keys
         for i in change_keys:
             left, right = i.split('_')
-            kwargs[f'{left}-{right}'] = kwargs.pop(i)
+            if left == 'meta':
+                kwargs[f'{left} {right}'] = kwargs.pop(i)
+            else:    
+                kwargs[f'{left}-{right}'] = kwargs.pop(i)
         return kwargs
 
 
