@@ -3,13 +3,13 @@ import setuptools
 setup(
   name = 'FortiJson',         
   packages = ['FortiJson'],   
-  version = '0.8',      
+  version = '0.9',      
   license='MIT',        
   description = 'Json formating tool that conforms to Fortinets Json RPC protocol',
   author = 'Todd Albiston',                   
   author_email = 'foxtrot711@gmail.com',      
   url = 'https://github.com/talbiston/fortijson-rpc',   
-  download_url = 'https://github.com/talbiston/fortijson-rpc/archive/refs/tags/0.8.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/talbiston/fortijson-rpc/archive/refs/tags/0.9.tar.gz',    # I explain this later on
   keywords = ['Fortigate', 'Fortinet', 'Fortinet api'],   
 
   classifiers=[
