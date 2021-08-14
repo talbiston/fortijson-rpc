@@ -18,7 +18,7 @@ def sort_request(request):
     Args:
         request: JSON-RPC request in dict format.
     """
-    sort_order = ["jsonrpc", "method", "params", "id", "session"]
+    sort_order = ["jsonrpc", "method", "params", "id", "session", "verbose"]
     return OrderedDict(sorted(request.items(), key=lambda k: sort_order.index(k[0])))
 
 
@@ -48,6 +48,7 @@ class JsonRpc(dict):  # type: ignore
 
         kwargs = fix_keys(kwargs)
         session = kwargs.pop('session', None)
+        verbose = kwargs.pop('verbose', None)
         base_list = []
         if args and kwargs:
             # The 'params' can be *EITHER* "by-position" (a list) or "by-name" (a dict).
@@ -63,13 +64,16 @@ class JsonRpc(dict):  # type: ignore
             params_list.append(kwargs)
             self.update(params=params_list)
             self.update(session=session)
+            self.update(verbose=verbose)
         elif args:
             self.update(params=list(args))
             self.update(session=session)
+            self.update(verbose=verbose)
         elif kwargs:
             base_list.append(kwargs)
             self.update(params=base_list)
             self.update(session=session)
+            self.update(verbose=verbose)
 
     def __json__(self):
 
